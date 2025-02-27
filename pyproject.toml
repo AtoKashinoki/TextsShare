@@ -15,7 +15,6 @@ requires-python = '>=3.7'
 dependencies = [
    'CodingTools@git+https://github.com/AtoKashinoki/CodingTools.git@v3.3.2',
    'flask',
-   'pyautogui',
 ]
 
 authors = [

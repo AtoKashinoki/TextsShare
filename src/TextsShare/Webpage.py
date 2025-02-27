@@ -9,8 +9,6 @@ This file contains the Webpage-relate tools used for create webpages.
 
 
 from flask import Flask
-from pyautogui import hotkey
-from threading import Thread
 from CodingTools.Wrapper import initialize
 
 
