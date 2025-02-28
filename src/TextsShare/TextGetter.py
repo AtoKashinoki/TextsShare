@@ -18,10 +18,18 @@ def convert_day(_datetime: datetime) -> str:
     return _datetime.strftime("%Y-%m-%d")
 
 
-class TodayTexts:
+def today() -> str:
+    return datetime.now().strftime("%Y-%m-%d")
 
-    def __init__(self, directory: str, target: str = "/*"):
-        today = convert_day(datetime.now())
+
+class SearchTexts:
+
+    def __init__(
+            self,
+            directory: str,
+            target: str = "/*",
+            target_day: str = today()
+    ):
 
         self.__files = {
             file: open(file).read()
@@ -29,7 +37,7 @@ class TodayTexts:
                 file: convert_day(datetime.fromtimestamp(path.getmtime(file)))
                 for file in glob(directory+target)
             }.items()
-            if day == today
+            if day == target_day
         }
 
         return

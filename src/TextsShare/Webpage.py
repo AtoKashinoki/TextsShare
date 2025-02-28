@@ -62,10 +62,10 @@ class Webpage:
             continue
         return
 
-    def run(self) -> None:
+    def run(self, host, port) -> None:
         """ Run web page """
         self.__gen_pages()
-        self.__app.run()
+        self.__app.run(host=host, port=port)
         return
 
     ...
