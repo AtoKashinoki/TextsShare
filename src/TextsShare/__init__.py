@@ -18,6 +18,7 @@ def run(
         route: str = ".",
         target: str = "/*",
         host: str = "127.0.0.1",
+        port: int = 5000,
 ):
     texts = SearchTexts(route, target)
 
@@ -29,6 +30,6 @@ def run(
 
     Webpage.add_page("/", page)
 
-    qrcode.make(f"http://{host}").show()
-    Webpage.run(host, 5000)
+    qrcode.make(f"http://{host}:{port}").show()
+    Webpage.run(host,  port)
     return
