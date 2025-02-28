@@ -29,6 +29,6 @@ def run(
 
     Webpage.add_page("/", page)
 
-    qrcode.make(host).show()
+    qrcode.make(f"http://{host}").show()
     Webpage.run(host, 5000)
     return
